@@ -1,0 +1,22 @@
+1.Подключить репозиторий с nginx любым удобным способом, установить nginx и потом удалить nginx, используя 
+утилиту dpkg.
+
+Проверяем версию Ubuntu:
+user@ubuntugb~$ lsb_release -a
+No LSB modules are available.
+Distributor ID:	Ubuntu
+Description:	Ubuntu 20.04.4 LTS
+Release:	20.04
+Codename:	focal
+
+Подключение репозитория:
+root@ubuntugb:/etc/apt/sources.list.d# echo "deb http://nginx.org/packages/ubuntu focal nginx" > nginx.list
+root@ubuntugb:/etc/apt/sources.list.d# curl -fsSL https://nginx.org/keys/nginx_signing.key | sudo apt-key add -
+OK
+root@ubuntugb:/etc/apt/sources.list.d# sudo apt update
+root@ubuntugb:/etc/apt/sources.list.d# sudo apt install nginx -y
+
+2. Установить пакет на свой выбор, используя snap.
+
+user@ubuntugb:/etc/apt/sources.list.d$ sudo snap install robomongo
+robomongo 0.9.0-rc9 from Francesco Banconi (frankban) installed
